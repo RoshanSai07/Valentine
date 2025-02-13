@@ -124,19 +124,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 💌 Love Letter Gallery - Popup System
   const loveLetters = {
-    napoleon: {
-      title: "Napoleon to Josephine",
-      text: `"Since I left you, I have been constantly depressed. My happiness is to be near you."`,
-    },
-    beethoven: {
-      title: "Beethoven’s Immortal Beloved",
-      text: `"Ever thine. Ever mine. Ever ours."`,
-    },
-    frida: {
-      title: "Frida Kahlo to Diego Rivera",
-      text: `"I don’t know how to write love letters. But I want to tell you that my whole being opens itself to you."`,
-    },
-  };
+  napoleon: {
+    title: "Napoleon to Josephine",
+    text: `"Since I left you, I have been constantly depressed. My happiness is to be near you."`,
+  },
+  beethoven: {
+    title: "Beethoven’s Immortal Beloved",
+    text: `"Ever thine. Ever mine. Ever ours."`,
+  },
+  frida: {
+    title: "Frida Kahlo to Diego Rivera",
+    text: `"I don’t know how to write love letters. But I want to tell you that my whole being opens itself to you."`,
+  },
+  cash: {
+    title: "Johnny Cash to June Carter",
+    text: `"Happy Birthday Princess,  
+We get old and get used to each other. We think alike. We read each other’s minds.  
+We know what the other wants without asking.  
+Sometimes we irritate each other a little bit. Maybe sometimes take each other for granted.  
+But once in a while, like today, I meditate on it and realize how lucky I am to share my life with the greatest woman I ever met.  
+
+You still fascinate and inspire me. You influence me for the better.  
+You’re the object of my desire, the #1 Earthly reason for my existence.  
+I love you very much.  
+
+Happy Birthday, Princess.  
+
+- Johnny Cash"`,
+  },
+  zelda: {
+    title: "Zelda Fitzgerald to F. Scott Fitzgerald",
+    text: `"Darling—  
+Please, please don’t be so depressed—We’ll be married soon, and then these lonesome nights will be over forever—  
+You are the loveliest person I ever knew, and for you to be in any way unhappy is more grief than I can bear—  
+And I love you, my dear, my dear—with all the fervor of a soul that is afraid of itself, and the future—  
+I love you, always.  
+
+- Zelda Fitzgerald"`,
+  },
+};
 
   const modal = document.getElementById("letterModal");
   const modalTitle = document.getElementById("letter-title");
