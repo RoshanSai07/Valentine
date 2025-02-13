@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hearts Through Time</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Landing Page -->
+    <header>
+      <div class="container">
+        <h1>Hearts Through Time</h1>
+        <p>Celebrating Love Across Centuries and Cultures</p>
+        <nav>
+          <a href="#timeline">Timeline</a>
+          <a href="#map">Global Traditions</a>
+          <a href="#gallery">Love Letters</a>
+          <a href="#note-creator">Create Your Note</a>
+        </nav>
+      </div>
+    </header>
+    <br />
+    <!-- Music Player -->
+    <div class="music-player">
+      <audio id="background-music" loop>
+        <source src="perfect-beauty-191271.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <button id="music-toggle">🎵 Play Music</button>
+    </div>
+    <br />
+    <!-- Interactive Timeline -->
+    <section id="timeline" class="timeline">
+      <div class="container">
+        <h2>📜 Interactive Timeline</h2>
+        <p>Explore the history of Valentine's Day through the ages!</p>
+        <div class="timeline">
+          <div
+            class="timeline-item"
+            onclick="toggleDetails(this)"
+            data-description="Lupercalia was an ancient Roman festival held in mid-February to celebrate fertility and purification. Some historians link it to Valentine's Day."
+          >
+            <h3>Ancient Rome</h3>
+            <p>Lupercalia Festival celebrated in mid-February.</p>
+          </div>
+
+          <div
+            class="timeline-item"
+            onclick="toggleDetails(this)"
+            data-description="Geoffrey Chaucer's poetry in the Middle Ages helped associate Valentine's Day with romantic love."
+          >
+            <h3>Middle Ages</h3>
+            <p>Chaucer's romantic poetry popularized Valentine's Day.</p>
+          </div>
+
+          <div
+            class="timeline-item"
+            onclick="toggleDetails(this)"
+            data-description="By the 15th century, people exchanged handwritten love letters, a tradition that spread across Europe."
+          >
+            <h3>15th-18th Century</h3>
+            <p>Handwritten valentines became popular.</p>
+          </div>
+
+          <div
+            class="timeline-item"
+            onclick="toggleDetails(this)"
+            data-description="Valentine’s Day became a commercial holiday with greeting cards, chocolates, and gifts."
+          >
+            <h3>Modern Era</h3>
+            <p>Commercialization of Valentine's Day with cards and gifts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <section id="traditions" class="global-traditions">
+      <div class="container">
+        <h2>🌍 Global Love Traditions</h2>
+        <p>Discover how love is celebrated around the world!</p>
+        <div class="tradition-cards">
+          <div class="card">
+            <h3>🇯🇵 Japan</h3>
+            <p>Women give chocolates to men on February 14!</p>
+          </div>
+          <div class="card">
+            <h3>🇰🇷 South Korea</h3>
+            <p>Celebrate love on the 14th of every month!</p>
+          </div>
+          <div class="card">
+            <h3>🇫🇷 France</h3>
+            <p>Known for "La Saint-Valentin," a romantic getaway tradition.</p>
+          </div>
+          <div class="card">
+            <h3>🇧🇷 Brazil</h3>
+            <p>They celebrate "Dia dos Namorados" on June 12!</p>
+          </div>
+          <div class="card">
+            <h3>🇵🇭 Philippines</h3>
+            <p>Mass weddings are popular on Valentine's Day!</p>
+          </div>
+          <div class="card">
+            <h3>🇩🇰 Denmark</h3>
+            <p>Men send funny poems called "Gaekkebrev" to their crushes!</p>
+          </div>
+          <div class="card">
+            <h3>🇮🇹 Italy</h3>
+            <p>
+              Couples exchange **Baci Perugina** chocolates with love notes
+              inside!
+            </p>
+          </div>
+          <div class="card">
+            <h3>🇿🇦 South Africa</h3>
+            <p>Women pin the names of their crushes on their sleeves!</p>
+          </div>
+          <div class="card">
+            <h3>🇬🇧 United Kingdom</h3>
+            <p>
+              Girls placed bay leaves under pillows to dream of their future
+              husband!
+            </p>
+          </div>
+          <div class="card">
+            <h3>🇪🇪 Estonia</h3>
+            <p>
+              February 14 is also "Friendship Day," where singles ride the "Love
+              Bus" to find a partner!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br />
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <h2>💌 Love Letter Gallery</h2>
+        <p>Swipe or scroll to explore famous love letters.</p>
+        <div class="scroll-container">
+          <div class="gallery-item" onclick="openLetter('napoleon')">
+            Napoleon to Josephine
+          </div>
+          <div class="gallery-item" onclick="openLetter('beethoven')">
+            Beethoven’s Immortal Beloved
+          </div>
+          <div class="gallery-item" onclick="openLetter('frida')">
+            Frida Kahlo to Diego Rivera
+          </div>
+          <div class="gallery-item" onclick="openLetter('cash')">
+            Johnny Cash to June Carter
+          </div>
+          <div class="gallery-item" onclick="openLetter('zelda')">
+            Zelda Fitzgerald to F. Scott Fitzgerald
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div id="letterModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeLetter()">&times;</span>
+        <h3 id="letter-title"></h3>
+        <p id="letter-text"></p>
+      </div>
+    </div>
+
+    <br />
+    <!-- Note Creator -->
+    <section id="note-creator" class="note-creator">
+      <div class="container">
+        <h2>✨ Create Your Love Note</h2>
+        <p>Design and share your own Valentine's Day message.</p>
+        <textarea placeholder="Write your love note here..."></textarea>
+        <button id="create-note">Create Note</button>
+        <div id="note-output"></div>
+        <!-- Output for the generated note -->
+      </div>
+      <br />
+      <section id="valentine-story" class="valentine-story">
+        <h2>💌 The True Story of Valentine’s Day 💖</h2>
+        <p>
+          Valentine’s Day is more than just chocolates and roses—it has a
+          fascinating history!
+        </p>
+        <p>
+          It dates back to <strong>ancient Rome</strong>, where Emperor Claudius
+          II banned marriages for young soldiers, believing they fought better
+          when single. A kind-hearted priest, <strong>St. Valentine</strong>,
+          secretly performed marriages for young lovers. When the emperor found
+          out, he sentenced Valentine to death.
+        </p>
+        <p>
+          While in prison,
+          <strong>Valentine fell in love with the jailer’s daughter</strong> and
+          sent her a letter signed <em>“From Your Valentine”</em> before his
+          execution on <strong>February 14th, 269 AD</strong>. This phrase
+          became the inspiration behind the love notes we exchange today.
+        </p>
+        <p>
+          Centuries later, Pope Gelasius I declared
+          <strong>February 14th as St. Valentine’s Day</strong>, honoring love
+          and devotion. Over time, it evolved into the
+          <strong>romantic celebration</strong> we know today.
+        </p>
+        <p class="valentine-ending">
+          So whether you’re in love, single, or just here for the memes,
+          <strong>Happy Valentine’s Day! ❤️</strong>
+        </p>
+      </section>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>Made with ❤️ by Unkown...</p>
+        <p>© 2025 Hearts Through Time</p>
+      </div>
+    </footer>
+
+    <!-- Single Zone Section -->
+    <div class="single-zone">
+      <p>Feeling Single?</p>
+      <button id="single-button">💔 Click Here</button>
+    </div>
+    <div id="single-message" class="single-message-box"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

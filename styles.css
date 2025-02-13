@@ -1,0 +1,435 @@
+/* Global Styles */
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ffcccb, #ff69b4);
+  color: #333;
+  text-align: center;
+}
+
+header {
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid #ff1493;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ff1493;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+nav {
+  margin: 20px 0;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ff1493;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff69b4;
+}
+
+section {
+  padding: 50px 20px;
+  margin: 40px 0; /* Increased margin for spacing */
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.timeline,
+.map,
+.gallery,
+.note-creator {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+footer {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-top: 2px solid #ff1493;
+  margin-top: 50px;
+}
+
+/* Timeline Styles */
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px; /* Increased gap for spacing */
+}
+
+.timeline-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.global-traditions {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.tradition-cards {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 20px 0;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+}
+
+.tradition-cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tradition-cards::-webkit-scrollbar-thumb {
+  background: #ff6b81;
+  border-radius: 10px;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 250px; /* Adjusted width */
+  padding: 15px;
+  background: #ffe0e9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  scroll-snap-align: center;
+  word-wrap: break-word; /* Ensures long words wrap */
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 140px; /* Fixed height for consistency */
+}
+
+.card h3 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  white-space: normal; /* Allows text to break */
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.3;
+  white-space: normal; /* Ensures text wraps properly */
+}
+
+/* Note Creator Styles */
+.note-creator {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #ff1493;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff1493;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ff69b4;
+}
+
+/* Note Output Styles */
+#note-output {
+  margin-top: 30px; /* Increase this value for more gap */
+  background: #ffe4e1;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Music Player */
+.music-player {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#music-toggle {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+#music-toggle:hover {
+  background: #ff69b4;
+}
+/* World Map */
+.map-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.world-map {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.map-tooltip {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+}
+/* Floating Single Zone */
+.single-zone {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff4d6d;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+#single-button {
+  margin-top: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: white;
+  color: #ff4d6d;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+#single-button:hover {
+  background-color: #ffccd5;
+}
+
+#single-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff4d6d;
+  color: white;
+  padding: 15px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 1 !important;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-out animation */
+.fade-out {
+  opacity: 0;
+  animation: fadeOut 0.5s ease-in-out;
+}
+/* Scrollable container */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 15px;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar (Firefox) */
+}
+
+/* Hide scrollbar for Webkit (Chrome, Safari) */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Gallery items */
+.gallery-item {
+  cursor: pointer;
+  padding: 12px 18px;
+  font-size: 18px;
+  color: #d10050;
+  background: #fff3f8;
+  border-radius: 15px;
+  transition: 0.3s;
+  display: inline-block;
+  white-space: nowrap;
+  border: 2px solid transparent;
+}
+
+.gallery-item:hover {
+  color: white;
+  background-color: #ff4d6d;
+  border-color: #d10050;
+}
+
+/* Modal styling */
+/* Ensure the modal is hidden initially */
+.modal {
+  display: none; /* This prevents it from showing on refresh */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 50%;
+  max-width: 500px;
+  position: relative;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #d10050;
+}
+.close:hover {
+  color: black;
+}
+
+.valentine-story {
+  background-color: #ffe4e1; /* Light pink background */
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  max-width: 800px;
+}
+
+.valentine-story h2 {
+  color: #ff4d6d;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.valentine-story p {
+  color: #333;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.valentine-ending {
+  font-size: 20px;
+  font-weight: bold;
+  color: #d6336c;
+  margin-top: 15px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+}
